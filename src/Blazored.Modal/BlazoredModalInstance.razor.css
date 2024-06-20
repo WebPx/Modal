@@ -97,9 +97,9 @@
 }
 
 .position-middle {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     justify-content: center;
+    align-items: center;
 }
 
 .fade-in {
@@ -130,3 +130,40 @@
          opacity: 0;
      }
  }
+
+.bm-container.pop-in .blazored-modal {
+    animation: 300ms ease-out 0s ModalPopIn;
+}
+
+.bm-container.pop-out .blazored-modal {
+    animation: 300ms ease-in 0s ModalPopOut;
+    transform: scale(0%);
+}
+
+@keyframes ModalPopIn {
+    0% {
+        transform: scale(0%);
+    }
+
+    50% {
+        transform: scale(110%);
+    }
+
+    100% {
+        transform: scale(100%);
+    }
+}
+
+@keyframes ModalPopOut {
+    0% {
+        transform: scale(100%);
+    }
+
+    50% {
+        transform: scale(110%);
+    }
+
+    100% {
+        transform: scale(0%);
+    }
+}
